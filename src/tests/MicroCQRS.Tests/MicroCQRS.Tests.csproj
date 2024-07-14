@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\MicroCQRS\MicroCQRS.csproj" />
+    <ProjectReference Include="..\..\MicroCQRS\MicroCQRS.csproj" />
   </ItemGroup>
 
   <ItemGroup>
