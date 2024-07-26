@@ -58,5 +58,5 @@ jobs:
             - name: Push to nuget.org
               run: |
                 foreach($file in (Get-ChildItem "${{ env.NuGetDirectory }}" -Recurse -Include *.nupkg)) {
-                    dotnet nuget push $file --api-key "${{ secrets.MICROCQRS_NUGET_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
+                    dotnet nuget push $file --api-key "${{ secrets.MICROCQRS_NUGET_KEY }}" -s https://api.nuget.org/v3/index.json
                 }
