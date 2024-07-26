@@ -8,10 +8,12 @@ on:
 defaults:
     run:
         shell: pwsh
-        working-directory: ./src
 
 jobs:
     build:
+        defaults:
+            run:
+                working-directory: ./src
         runs-on: ubuntu-latest
 
         steps:
