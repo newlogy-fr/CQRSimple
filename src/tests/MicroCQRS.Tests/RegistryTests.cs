@@ -1,4 +1,3 @@
-using MicroCQRS.Tests.Fakes;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using System.Reflection;
@@ -52,7 +51,7 @@ namespace MicroCQRS.Tests
             var registeredServices = serviceCollection.Where(sd => sd.ServiceType.IsGenericType &&
                 sd.ServiceType.GetGenericTypeDefinition() == type).ToList();
 
-            Assert.That(registeredServices.Count, Is.EqualTo(count));
+            Assert.That(registeredServices, Has.Count.EqualTo(count));
             foreach (var serviceDescriptor in registeredServices)
             {
                 Assert.That(serviceDescriptor.Lifetime, Is.EqualTo(ServiceLifetime.Transient));
