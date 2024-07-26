@@ -23,16 +23,16 @@ jobs:
                   dotnet-version: '8.0.x'
 
             - name: Restore dependencies
-              run: dotnet restore --solution src/MicroCQRS.sln
+              run: dotnet restore ./src
 
             - name: Build
-              run: dotnet build --solution src/MicroCQRS.sln --configuration Release
+              run: dotnet build ./src --configuration Release
 
             - name: Pack NuGet package
-              run: dotnet pack --configuration Release --no-build --output ./artifacts
+              run: dotnet pack ./src --configuration Release --no-build --output ./artifacts
 
             - name: Test
-              run: dotnet test --configuration Release --no-build
+              run: dotnet test ./src --configuration Release --no-build
 
     publish:
         # if: github.event_name == 'release'
