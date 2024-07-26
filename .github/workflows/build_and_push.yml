@@ -7,7 +7,6 @@ on:
 
 defaults:
     run:
-        working-directory: ./src
         shell: pwsh
 
 jobs:
@@ -24,10 +23,10 @@ jobs:
                   dotnet-version: '8.0.x'
 
             - name: Restore dependencies
-              run: dotnet restore
+              run: dotnet restore --solution src/MicroCQRS.sln
 
             - name: Build
-              run: dotnet build --configuration Release
+              run: dotnet build --solution src/MicroCQRS.sln --configuration Release
 
             - name: Pack NuGet package
               run: dotnet pack --configuration Release --no-build --output ./artifacts
