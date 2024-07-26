@@ -7,13 +7,11 @@ on:
 
 defaults:
     run:
+        working-directory: ./src
         shell: pwsh
 
 jobs:
     build_and_test:
-        defaults:
-            run:
-                working-directory: ./src
         runs-on: ubuntu-latest
 
         steps:
