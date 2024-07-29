@@ -2,7 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Moq;
 using System.Reflection;
 
-namespace MicroCQRS.Tests
+namespace CQRSimple.Tests
 {
     public class RegistryTests
     {
@@ -17,10 +17,10 @@ namespace MicroCQRS.Tests
         }
 
         [Test]
-        public void AddMicroCQRS_ShouldRegisterCommandAndQueryHandlersAndDispatcher()
+        public void AddCQRSimple_ShouldRegisterCommandAndQueryHandlersAndDispatcher()
         {
             // Act
-            Registry.AddMicroCQRS(_serviceCollectionMock.Object, _assembly);
+            Registry.AddCQRSimple(_serviceCollectionMock.Object, _assembly);
 
             // Assert
             _serviceCollectionMock.Verify(sc => sc.Add(It.Is<ServiceDescriptor>(sd =>
@@ -45,7 +45,7 @@ namespace MicroCQRS.Tests
             var serviceCollection = new ServiceCollection();
 
             // Act
-            serviceCollection.AddMicroCQRS(_assembly);
+            serviceCollection.AddCQRSimple(_assembly);
 
             // Assert
             var registeredServices = serviceCollection.Where(sd => sd.ServiceType.IsGenericType &&

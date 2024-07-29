@@ -1,8 +1,8 @@
-using MicroCQRS.Tests.Fakes;
+using CQRSimple.Tests.Fakes;
 using Microsoft.Extensions.DependencyInjection;
 using Moq;
 
-namespace MicroCQRS.Tests
+namespace CQRSimple.Tests
 {
     public class DispatcherTests
     {
@@ -63,7 +63,7 @@ namespace MicroCQRS.Tests
         {
             // Arrange
             var serviceCollection = new ServiceCollection();
-            serviceCollection.AddMicroCQRS();
+            serviceCollection.AddCQRSimple();
             var dispatcher = serviceCollection.BuildServiceProvider().GetService<IDispatcher>();
 
             // Act
@@ -81,7 +81,7 @@ namespace MicroCQRS.Tests
         {
             // Arrange
             var serviceCollection = new ServiceCollection();
-            serviceCollection.AddMicroCQRS();
+            serviceCollection.AddCQRSimple();
             var dispatcher = serviceCollection.BuildServiceProvider().GetService<IDispatcher>();
 
             // Act

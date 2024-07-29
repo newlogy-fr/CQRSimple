@@ -1,4 +1,4 @@
-﻿namespace MicroCQRS.Tests.Fakes
+﻿namespace CQRSimple.Tests.Fakes
 {
     internal class DoubleTestQueryHandler : IQueryHandler<DoubleTestQuery, List<double>>
     {

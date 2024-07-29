@@ -1,21 +1,21 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
 
-namespace MicroCQRS
+namespace CQRSimple
 {
     public static class Registry
     {
-        public static IServiceCollection AddMicroCQRS(this IServiceCollection services)
+        public static IServiceCollection AddCQRSimple(this IServiceCollection services)
         {
-            return services.AddMicroCQRS(AppDomain.CurrentDomain.GetAssemblies());
+            return services.AddCQRSimple(AppDomain.CurrentDomain.GetAssemblies());
         }
 
-        public static IServiceCollection AddMicroCQRS(this IServiceCollection services, Assembly assembly)
+        public static IServiceCollection AddCQRSimple(this IServiceCollection services, Assembly assembly)
         {
-            return services.AddMicroCQRS(new[] { assembly });
+            return services.AddCQRSimple(new[] { assembly });
         }
 
-        public static IServiceCollection AddMicroCQRS(this IServiceCollection services, Assembly[] assemblies)
+        public static IServiceCollection AddCQRSimple(this IServiceCollection services, Assembly[] assemblies)
         {
             services.AddGenericTypes(assemblies, typeof(ICommandHandler<>));
             services.AddGenericTypes(assemblies, typeof(IQueryHandler<,>));

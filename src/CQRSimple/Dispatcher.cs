@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace MicroCQRS
+namespace CQRSimple
 {
     public class Dispatcher : IDispatcher
     {

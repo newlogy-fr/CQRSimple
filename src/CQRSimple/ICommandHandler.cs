@@ -1,4 +1,4 @@
-﻿namespace MicroCQRS
+﻿namespace CQRSimple
 {
     public interface ICommandHandler<TCommand> where TCommand : ICommand
     {
